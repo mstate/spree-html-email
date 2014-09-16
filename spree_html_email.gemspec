@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_html_email'
-  s.version     = '1.2.0'
+  s.version     = '1.2.1'
 
   s.summary     = 'HTML email support for Spree'
   s.description = "Provides html email templates for all Spree's outgoing emails. Uses ERB."
@@ -17,12 +17,12 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 1.1'
-  s.add_dependency 'premailer-rails', '~> 1.7.0'
+  s.add_dependency 'spree_core', '~> 2.2.5'
+  s.add_dependency 'premailer-rails', '~> 1.8.0'
 
-  s.add_development_dependency 'rspec-rails',  '~> 2.7'
+  s.add_development_dependency 'rspec-rails',  '~> 2.13'
   s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'factory_girl', '~> 2.6'
+  s.add_development_dependency 'factory_girl', '~> 4.4'
   s.add_development_dependency 'ffaker'
 end
 
