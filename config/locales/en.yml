@@ -3,3 +3,10 @@ en:
   tracking_information: Tracking Information
   shipment_details: Shipment Details
   digital_item_email_title: "<b>%{name}, %{type}:</b><br/>"
+
+  spree:
+    order_details: "Order details"
+    oreder_full_details: "To view full order details, go to link:"
+    order_thank_you: "Thank you for your business."
+    store_dear: "Dear %{name}, "
+    items_purchased: "Items purchased"

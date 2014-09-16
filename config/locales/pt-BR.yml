@@ -1,0 +1,12 @@
+pt-BR:
+  digital_email_description: <p>Cada link irá funcionar apenas uma vez! Além disso, eles só vão funcionar dentro de 24 horas!</p>
+  tracking_information: Informação de Rastreamento
+  shipment_details: Detalhes da entrega
+  digital_item_email_title: "<b>%{name}, %{type}:</b><br/>"
+  ship_code_information: "Clique no código:"
+
+  spree:
+    oreder_full_details: "Para ver os detalhes do pedido, clique no link:"
+    order_thank_you: "Thank you for your business."
+    store_dear: "Olá %{name}, "
+    items_purchased: "Produtos comprados"

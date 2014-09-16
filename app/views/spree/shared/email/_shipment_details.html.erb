@@ -1,15 +1,15 @@
 <div id="shipping">
-  <h2><%= t(:shipping_address) %></h2>
+  <h2><%= Spree.t(:ship_address) %></h2>
   <%= render :partial => 'spree/shared/email/address', :locals => {:address => shipment.address} %>
 </div>
 
-<h2><%= t(:shipment_details) %></h2>
+<h2><%= Spree.t("shipment_mailer.shipped_email.shipment_summary") %></h2>
 <table id="shipment-details" data-hook="shipment_details">
   <tbody id="line-items" data-hook>
     <tr data-hook="shipment_details_line_items_headers">
-      <th><%= t(:item_description) %></th>
-      <th class="qty number"><%= t(:qty) %></th>
-      <th><%= t(:status) %></th>
+      <th><%= Spree.t(:item_description) %></th>
+      <th class="qty number"><%= Spree.t(:qty) %></th>
+      <th><%= Spree.t(:status) %></th>
     </tr>
     <% shipment.manifest.each do |item| %>
       <tr data-hook="shipment_details_line_item_row" class="<%=cycle('', 'alt')%>">
@@ -18,7 +18,7 @@
           <%= "(" + variant_options(item.variant) + ")" unless item.variant.option_values.empty? %>
         </td>
         <td class="qty number"><%= item.quantity %></td>
-        <td><%= t('shipped') %></td>
+        <td><%= Spree.t('shipment_states.shipped') %></td>
       </tr>
     <% end %>
   </tbody>
