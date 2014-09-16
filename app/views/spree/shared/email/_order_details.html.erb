@@ -1,21 +1,27 @@
 <table id="order_summary" class="split">
   <tr>
-    <td>Number</td>
+    <td><%=Spree.t("order_number")%></td>
     <td><%= order.number %></td>
   </tr>
   <tr class="alt">
-    <td>Payment Method</td>
+    <td><%=Spree.t("payment_method")%> </td>
     <td><%= order.payments.collect {|p| p.payment_method.name }.join(', ') %></td>
+  </tr>
+  <tr class="alt">
+    <td><%=Spree.t("shipping_method")%> </td>
+    <td>
+      <%= order.shipments.collect {|s| s.selected_shipping_rate.name }.join(', ') %>
+    </td>
   </tr>
   <% if order.canceled? %>
     <tr>
-      <td>Status</td>
-      <td>Canceled</td>
+      <td><%=Spree.t("status")%></td>
+      <td><%=Spree.t("order_state.canceled")%></td>
     </tr>
   <% else %>
     <tr>
-      <td>Submitted</td>
-      <td><%= l(order.completed_at, :format => "%B %d, %Y") %></td>
+      <td><%=Spree.t("date")%></td>
+      <td><%= l(order.completed_at, :format => :long) %></td>
     </tr>
   <% end %>
 </table>
@@ -23,26 +29,26 @@
 <table id="addresses">
   <tr>
     <td>
-      <h2><span><%= t(:billing_address) %></span></h2>
+      <h2><span><%= Spree.t("billing_address") %></span></h2>
       <%= render :partial => 'spree/shared/email/address', :locals => {:address => order.bill_address} %>
     </td>
     <td>
-      <h2><span><%= t(:shipping_address) %></span></h2>
+      <h2><span><%= Spree.t(:shipping_address) %></span></h2>
       <%= render :partial => 'spree/shared/email/address', :locals => {:address => order.ship_address} %>
     </td>
   </tr>
 </table>
 
 <div class="spacer_15"> </div>
-<h2><span>Order Details</span></h2>
+<h2><span><%= Spree.t(:order_details) %></span></h2>
 
 <table id="order_details">
   <tbody id="line-items">
     <tr data-hook="order_details_line_items_headers">
-      <th><%= t(:items_purchased) %></th>
-      <th class="price number"><%= t(:price) %></th>
-      <th class="qty number"><%= t(:qty) %></th>
-      <th class="total number"><%= t(:total) %></th>
+      <th><%= Spree.t(:items_purchased) %></th>
+      <th class="price number"><%= Spree.t(:price) %></th>
+      <th class="qty number"><%= Spree.t(:qty) %></th>
+      <th class="total number"><%= Spree.t(:total) %></th>
     </tr>
     <% order.line_items.each do |item| %>
       <tr data-hook="order_details_line_item_row" class="<%= cycle('', 'alt') %>">
@@ -59,7 +65,7 @@
   <tbody id="subtotal" data-hook="order_details_subtotal">
     <tr id="subtotal-row">
       <td class="title" colspan="3">
-        <%= t(:subtotal) %>
+        <%= Spree.t(:subtotal) %>
       </td>
       <td class="total number">
         <%= number_to_currency order.item_total %>
@@ -67,6 +73,26 @@
     </tr>
   </tbody>
   <tbody id="order-charges" data-hook="order_details_adjustments">
+    <% if order.checkout_steps.include?("delivery") && order.shipments.any? %>
+      <tr class="total">
+        <td class="title" colspan="3"><%= Spree.t(:shipping_total) %></td>
+        <td class="total number"><%= Spree::Money.new(order.shipments.to_a.sum(&:cost), currency: order.currency).to_html %></td>
+      </tr>
+
+      <% if order.shipment_adjustments.exists? %>
+          <% order.shipment_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+            <tr class="total">
+              <td class="title" colspan="3">
+                <%= label %>
+              </td>
+              <td class="total number">
+                <%= Spree::Money.new(adjustments.sum(&:amount), currency: order.currency).to_html %>
+              </td>
+            </tr>
+          <% end %>
+      <% end %>
+    <% end %>
+    
     <% order.adjustments.eligible.each do |adjustment| %>
       <% next if (adjustment.originator_type == "TaxRate") and (adjustment.amount == 0) %>
       <tr class="total">
@@ -82,7 +108,7 @@
   <tbody id="order-total" data-hook="order_details_total">
     <tr class="total">
       <td class="title" colspan="3">
-        <%= t(:order_total) %>
+        <%= Spree.t(:order_total) %>
       </td>
       <td class="total number">
         <span id="order_total"><%= number_to_currency order.total %></span>
