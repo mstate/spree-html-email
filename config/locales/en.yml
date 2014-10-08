@@ -3,15 +3,22 @@ en:
   tracking_information: Tracking Information
   shipment_details: Shipment Details
   digital_item_email_title: "<b>%{name}, %{type}:</b><br/>"
+  ship_code_information: Tracking number
 
   spree:
-    order_details: "Order details"
-    order_full_details: "To view full order details, go to link:"
-    order_thank_you: "Thank you for your business."
-    store_dear: "Dear %{name}, "
-    items_purchased: "Items purchased"
+    order_details: "Order Details"
+    items_purchased: "Items Purchased"
+    order_summary: "Order Summary"
+    email_full_details_link: "To view full order details, go to link:"
     reset_password_email:
-      title: "Resetting your password"
+      title: "Resetting your Password"
       warning: "A request to reset your password has been made.<br/> If you did not make this request, simply ignore this email."
       call_to_action: "If you made this request just click the link below:"
       troubleshooting: "If the above URL does not work try copying and pasting it into your browser.<br/> If you continue to have problem please feel free to contact us."
+    confirm_email:
+      salutation: "Dear %{name}, "
+      instructions: Please review and retain the following order information for your records.
+      thanks: "Thank you for your business!"
+    cancel_email:
+      instructions: "Your order has been <b>CANCELED</b>.  Please retain this cancellation information for your records."
+

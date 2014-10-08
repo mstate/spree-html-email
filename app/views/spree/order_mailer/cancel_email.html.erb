@@ -2,10 +2,10 @@
   <%= Spree.t(:dear_customer, :default => Spree.t("store_dear"), :name => @order.bill_address ? @order.bill_address.full_name : Spree.t("customer") ) %>
 </p>
 <p class="overview">
-  <%= Spree.t('order_mailer.cancel_email.instructions') %>
+  <%= Spree.t('cancel_email.instructions') %>
 </p>
 <p class="link">
-  <%= Spree.t("order_full_details")%>
+  <%= Spree.t("email_full_details_link")%>
   <%= link_to(order_url(@order, :host => Spree::Config[:site_url]), order_url(@order, :host => Spree::Config[:site_url])) %>
 </p>
 <h1>
