@@ -6,7 +6,7 @@ pt-BR:
   ship_code_information: "Clique no código:"
 
   spree:
-    oreder_full_details: "Para ver os detalhes do pedido, clique no link:"
+    order_full_details: "Para ver os detalhes do pedido, clique no link:"
     order_thank_you: "Thank you for your business."
     store_dear: "Olá %{name}, "
     items_purchased: "Produtos comprados"

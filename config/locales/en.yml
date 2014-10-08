@@ -6,7 +6,7 @@ en:
 
   spree:
     order_details: "Order details"
-    oreder_full_details: "To view full order details, go to link:"
+    order_full_details: "To view full order details, go to link:"
     order_thank_you: "Thank you for your business."
     store_dear: "Dear %{name}, "
     items_purchased: "Items purchased"
