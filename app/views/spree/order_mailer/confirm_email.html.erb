@@ -1,13 +1,16 @@
 <p class="customer">
   <%= Spree.t("confirm_email.salutation", :name => @order.bill_address ? @order.bill_address.full_name : Spree.t("customer") ) %>
 </p>
+
 <p class="overview">
   <%= Spree.t("confirm_email.instructions")%>
 </p>
+
 <p class="link">
   <%= Spree.t("email_full_details_link")%>
   <%= link_to(order_url(@order, :host => Spree::Config[:site_url]), order_url(@order, :host => Spree::Config[:site_url])) %>
 </p>
+
 <h1>
   <%= Spree.t("order_summary")%>
 </h1>
