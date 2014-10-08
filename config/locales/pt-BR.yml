@@ -10,3 +10,8 @@ pt-BR:
     order_thank_you: "Thank you for your business."
     store_dear: "Olá %{name}, "
     items_purchased: "Produtos comprados"
+    reset_password_email:
+      title: "Reinicializar a sua Senha"
+      warning: "Foi feita uma solicitação para redefinir a sua senha.<br/> Se você não fez esse pedido, simplesmente ignore este email."
+      call_to_action: "Se você fez esta solicitação basta clicar no link abaixo:"
+      troubleshooting: "Se você continuar com problemas, por favor não hesite em contactar-nos."

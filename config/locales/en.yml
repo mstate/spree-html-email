@@ -10,3 +10,8 @@ en:
     order_thank_you: "Thank you for your business."
     store_dear: "Dear %{name}, "
     items_purchased: "Items purchased"
+    reset_password_email:
+      title: "Resetting your password"
+      warning: "A request to reset your password has been made.<br/> If you did not make this request, simply ignore this email."
+      call_to_action: "If you made this request just click the link below:"
+      troubleshooting: "If the above URL does not work try copying and pasting it into your browser.<br/> If you continue to have problem please feel free to contact us."
