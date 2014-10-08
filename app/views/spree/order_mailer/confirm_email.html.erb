@@ -3,11 +3,11 @@
 </p>
 
 <p class="overview">
-  <%= Spree.t("confirm_email.instructions")%>
+  <%= Spree.t("confirm_email.instructions").html_safe %>
 </p>
 
 <p class="link">
-  <%= Spree.t("email_full_details_link")%>
+  <%= Spree.t("email_full_details_link").html_safe %>
   <%= link_to(order_url(@order, :host => Spree::Config[:site_url]), order_url(@order, :host => Spree::Config[:site_url])) %>
 </p>
 
@@ -17,5 +17,5 @@
 <%= render :partial => 'spree/shared/email/order_details', :locals => {:order => @order} %>
 <%= render :partial => 'spree/shared/email/digitals', :locals => { :order => @order } %>
 <p class="thank-you">
-  <%=Spree.t("email_thanks")%>
+  <%=Spree.t("email_thanks").html_safe %>
 </p>

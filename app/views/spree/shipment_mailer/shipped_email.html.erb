@@ -2,15 +2,15 @@
   <%= Spree.t(:email_salutation, :name => @shipment.order.bill_address ? @shipment.order.bill_address.full_name : Spree.t("customer") ) %>
 </p>
 <p class="overview">
-  <%= Spree.t("shipment_mailer.shipped_email.instructions")%>
+  <%= Spree.t("shipment_mailer.shipped_email.instructions").html_safe %>
 </p>
 <p class="link">
-  <%= Spree.t("oreder_full_details") %> 
+  <%= Spree.t("email_full_details_link").html_safe %> 
   <%= link_to(order_url(@shipment.order, :host => Spree::Config[:site_url]), order_url(@shipment.order, :host => Spree::Config[:site_url])) %>
 </p>
 <%= render :partial => 'spree/shared/email/shipment_details', :locals => {:shipment => @shipment} %>
 <%= render :partial => 'spree/shared/email/shipment_tracking', :locals => { :shipment => @shipment} %>
 <%= render :partial => 'spree/shared/email/digitals', :locals => { :order => @shipment.order } %>
 <p class="thank-you">
-  <%=Spree.t("email_thanks")%>
+  <%=Spree.t("email_thanks").html_safe%>
 </p>
