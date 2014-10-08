@@ -1,5 +1,5 @@
 <p class="customer">
-  <%= Spree.t("confirm_email.salutation"), :name => @order.bill_address ? @order.bill_address.full_name : Spree.t("customer") ) %>
+  <%= Spree.t("confirm_email.salutation", :name => @order.bill_address ? @order.bill_address.full_name : Spree.t("customer") ) %>
 </p>
 <p class="overview">
   <%= Spree.t("confirm_email.instructions")%>
