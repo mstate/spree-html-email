@@ -6,18 +6,20 @@ pt-BR:
   ship_code_information: "Clique no código:"
 
   spree:
-    order_thank_you: "Thank you for your business."
+    order_details: "Order Details"
     items_purchased: "Produtos comprados"
+    order_summary: "Order Summary"
     email_full_details_link: "Para ver os detalhes do pedido, clique no link:"
+    order_number_title: "Order Number"    
+    email_salutation: "Olá %{name}, "
+    email_thanks: "Thank you for your business!"
     reset_password_email:
       title: "Reinicializar a sua Senha"
       warning: "Foi feita uma solicitação para redefinir a sua senha.<br/> Se você não fez esse pedido, simplesmente ignore este email."
       call_to_action: "Se você fez esta solicitação basta clicar no link abaixo:"
       troubleshooting: "Se você continuar com problemas, por favor não hesite em contactar-nos."
     confirm_email:
-      salutation: "Olá %{name}, "
       instructions: Please review and retain the following order information for your records.
-      thanks: "Thank you for your business."
     cancel_email:
       instructions: "Your order has been <b>CANCELED</b>.  Please retain this cancellation information for your records."
 

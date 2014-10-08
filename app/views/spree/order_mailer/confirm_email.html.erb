@@ -1,5 +1,5 @@
 <p class="customer">
-  <%= Spree.t("confirm_email.salutation", :name => @order.bill_address ? @order.bill_address.full_name : Spree.t("customer") ) %>
+  <%= Spree.t("email_salutation", :name => @order.bill_address ? @order.bill_address.full_name : Spree.t("customer") ) %>
 </p>
 
 <p class="overview">
@@ -17,5 +17,5 @@
 <%= render :partial => 'spree/shared/email/order_details', :locals => {:order => @order} %>
 <%= render :partial => 'spree/shared/email/digitals', :locals => { :order => @order } %>
 <p class="thank-you">
-  <%=Spree.t("confirm_email.thanks")%>
+  <%=Spree.t("email_thanks")%>
 </p>

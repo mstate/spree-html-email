@@ -10,15 +10,16 @@ en:
     items_purchased: "Items Purchased"
     order_summary: "Order Summary"
     email_full_details_link: "To view full order details, go to link:"
+    order_number_title: "Order Number"
+    email_salutation: "Dear %{name}, "
+    email_thanks: "Thank you for your business!"
     reset_password_email:
       title: "Resetting your Password"
       warning: "A request to reset your password has been made.<br/> If you did not make this request, simply ignore this email."
       call_to_action: "If you made this request just click the link below:"
       troubleshooting: "If the above URL does not work try copying and pasting it into your browser.<br/> If you continue to have problem please feel free to contact us."
     confirm_email:
-      salutation: "Dear %{name}, "
       instructions: Please review and retain the following order information for your records.
-      thanks: "Thank you for your business!"
     cancel_email:
       instructions: "Your order has been <b>CANCELED</b>.  Please retain this cancellation information for your records."
 
